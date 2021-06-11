@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Nested Table</title>
-	<style type="text/css">
-	.collapseButton {
+  <meta charset="utf-8">
+  <title>Nested Table</title>
+<style type="text/css">
+table.center {
+  margin-left: auto; 
+  margin-right: auto;
+}
+.collapseButton {
   vertical-align: text-top;
 }
-
 th, td {
   padding: 1em;
 }
@@ -26,17 +29,17 @@ table {
 }
 
 table tr:nth-child(even) {
-  background-color: #ff851d;
+  background-color: #2091f5;
   color: white;
 }
 
 table tr:nth-child(odd) {
-  background-color: #ffc625ab;
+  background-color: #00529c42;
   color: white;
 }
 
 table th {
-  background-color: red;
+  background-color: #00172b;
 }
 
 table th, td {
@@ -45,19 +48,16 @@ table th, td {
 }
 
 #collapseButton:hover {
-  background-color: red;
+  background-color: #00172b;
 }
-	</style>
+  </style>
 </head>
 <body>
-	<p>Shalu Gupta, diwesh.saxena@thinknoblehouse.comYou have to implement a nested Grid(nested table inside table) using your own data set.
-Where each row will be clickable and will be opening its nested grid.
-Please push your code in the github repository and add a read.md file that has steps to run your code. If possible, share the codepen link of your code.
-Feel free to ask if you have any questions.</p>
-<table>
+  
+<table class="center">
   <tr>
     <th></th>
-    <th>Name</th>
+    <th>ame</th>
     <th>Mobile Number</th>
     <th>Email Address</th>
   </tr>
@@ -144,7 +144,7 @@ Feel free to ask if you have any questions.</p>
 </table>
 </body>
 <script type="text/javascript">
-	function collapse(cell){
+  function collapse(cell){
   var row = cell.parentElement;
   var target_row = row.parentElement.children[row.rowIndex + 1];
   if (target_row.style.display == 'table-row') {
