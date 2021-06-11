@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Nested Table</title>
+	<style type="text/css">
+	.collapseButton {
+  vertical-align: text-top;
+}
+
+th, td {
+  padding: 1em;
+}
+
+#hidden {
+  display: none;
+}
+
+.Table {
+  margin-left: 12em;
+  margin-top: 1em;
+  margin-right: 1em;
+}
+table {
+  border-collapse: collapse;
+}
+
+table tr:nth-child(even) {
+  background-color: #ff851d;
+  color: white;
+}
+
+table tr:nth-child(odd) {
+  background-color: #ffc625ab;
+  color: white;
+}
+
+table th {
+  background-color: red;
+}
+
+table th, td {
+  padding: 1em;
+  text-align: center;
+}
+
+#collapseButton:hover {
+  background-color: red;
+}
+	</style>
+</head>
+<body>
+	<p>Shalu Gupta, diwesh.saxena@thinknoblehouse.comYou have to implement a nested Grid(nested table inside table) using your own data set.
+Where each row will be clickable and will be opening its nested grid.
+Please push your code in the github repository and add a read.md file that has steps to run your code. If possible, share the codepen link of your code.
+Feel free to ask if you have any questions.</p>
+<table>
+  <tr>
+    <th></th>
+    <th>Name</th>
+    <th>Mobile Number</th>
+    <th>Email Address</th>
+  </tr>
+  <tr>
+    <td id="collapseButton" onclick="collapse(this)">+</td>
+    <td>Sachin</td>
+    <td>8979897989</td>
+    <td>sachin@gmail.com</td>
+  </tr>
+  <tr id="hidden">
+    <td></td>
+    <td colspan=3>
+        <table>
+          <tr>
+            <th></th>
+            <th>DOB</th>
+            <th>Country</th>
+            <th>City</th>
+          </tr>
+          <tr>
+            <td id="collapseButton" onclick="collapse(this)">+</td>
+            <td>07th Oct. 1994</td>
+            <td>India</td>
+            <td>Noida</td>
+          </tr>
+          <tr id="hidden">
+            <td></td>
+            <td colspan=2>
+              <table>
+                <tr>
+                  <th>Profile</th>
+                  <th>Exp.</th>
+                </tr>
+                <tr>
+                  <td>Frontend Developer</td>
+                  <td>3.5 Years</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+    </td>
+  </tr>
+  <tr>
+    <td id="collapseButton" onclick="collapse(this)">+</td>
+    <td>Sachin</td>
+    <td>8979897989</td>
+    <td>sachin@gmail.com</td>
+  </tr>
+  <tr id="hidden">
+    <td></td>
+    <td colspan=3>
+        <table>
+          <tr>
+            <th></th>
+            <th>DOB</th>
+            <th>Country</th>
+            <th>City</th> 
+          </tr>
+          <tr>
+            <td id="collapseButton" onclick="collapse(this)">+</td>
+            <td>07th Oct. 1994</td>
+            <td>India</td>
+            <td>Noida</td> 
+          </tr>
+          <tr id="hidden">
+            <td></td>
+            <td colspan=2>
+              <table>
+                <tr>
+                  <th>Profile</th>
+                  <th>Exp.</th>
+                </tr>
+                <tr>
+                  <td>Frontend Developer</td>
+                  <td>3.5 Years</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+    </td>
+  </tr>
+</table>
+</body>
+<script type="text/javascript">
+	function collapse(cell){
+  var row = cell.parentElement;
+  var target_row = row.parentElement.children[row.rowIndex + 1];
+  if (target_row.style.display == 'table-row') {
+    cell.innerHTML = '+';
+    target_row.style.display = 'none';
+  } else {
+    cell.innerHTML = '-';
+    target_row.style.display = 'table-row';
+  }
+}
+</script>
+</html>
